@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poruka za tebe 💕</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .heart {
+            font-size: 60px;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        #message {
+            display: none;
+            background: #fff5f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px dashed #ff6b9d;
+        }
+        button {
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff3d7f;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">💖</div>
+        <h1>Hej, dušo! 👋</h1>
+        <p>Imam nešto posebno za tebe...</p>
+        
+        <button onclick="showMessage()">Klikni ovde 💝</button>
+        
+        <div id="message">
+            <h2>Za najbolju devojku! 🌸</h2>
+            <p id="customMessage">Mislim na tebe svakog dana i osmeh mi ne silazi sa lica kad se setim tvoje lepote, tvoje pameti i tvog divnog smisla za humor. Ti si sve što sam ikada želeo i više od toga. Volim te! ❤️</p>
+            <p><small>~ Tvoj Boki</small></p>
+            <div class="heart">💘</div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.querySelector('button').style.display = 'none';
+            
+            // Dodajemo konfete efekat
+            setTimeout(() => {
+                alert("Volim te! ❤️");
+            }, 300);
+            
+            // Možeš dodati i muziku (opciono)
+            // var audio = new Audio('https://assets.mixkit.co/music/preview/mixkit-loving-you-117.mp3');
+            // audio.play();
+        }
+        
+        // Dodajemo tajni kod ako klikne 3 puta na srecu
+        let clickCount = 0;
+        document.querySelector('.heart').addEventListener('click', function() {
+            clickCount++;
+            if(clickCount === 3) {
+                document.getElementById('customMessage').innerHTML += 
+                    '<br><br><strong>❤️ Tajna poruka: Uvek ću biti tu za tebe! ❤️</strong>';
+            }
+        });
+    </script>
+</body>
+</html>
